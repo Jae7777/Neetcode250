@@ -2,7 +2,7 @@
 class Solution:
     def shipWithinDays(self, weights: List[int], days: int) -> int:
         maxWeight = max(weights)
-        l, r = maxWeight, len(weights) * maxWeight
+        l, r = maxWeight, -(len(weights) // -days)* maxWeight
         minCap = float('inf')
         while l <= r:
             cap = (l + r) // 2
@@ -23,4 +23,5 @@ class Solution:
             else:
                 l = cap + 1
         return minCap
+            
             
