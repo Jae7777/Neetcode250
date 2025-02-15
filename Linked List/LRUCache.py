@@ -1,49 +1,80 @@
 # https://neetcode.io/problems/lru-cache
 class Node:
-    def __init__(self, key=0, val=0, next=None, prev=None):
+    def __init__(self, key=0, val=0, prev=None, next=None):
         self.key = key
         self.val = val
-        self.next = next
+        self.count = 1
         self.prev = prev
+        self.next = next
 
-class LRUCache:
-    def __init__(self, capacity: int):
-        self.cache = {}
-        self.capacity = capacity
+class LinkedList:
+    def __init__(self):
         self.head = Node()
         self.tail = Node()
-        self.head.next, self.tail.prev = self.tail, self.head
-
-    def remove(self, node: Node) -> None:
-        p, n = node.prev, node.next
-        p.next, n.prev = n, p
+        self.head.next = self.tail
+        self.tail.prev = self.head
     
-    def insert(self, node: Node) -> None:
-        self.tail.prev.next = node
-        node.prev = self.tail.prev
-        self.tail.prev = node
+    def append(self, node):
+        last = self.tail.prev
+        node.prev = last
         node.next = self.tail
+        last.next = node
+        self.tail.prev = node
+    
+    def popleft(self):
+        first = self.head.next
+        self.head.next = first.next
+        first.next.prev = self.head
+        return first
+
+    def remove(self, node):
+        node.prev.next = node.next
+        node.next.prev = node.prev
+
+    def empty(self):
+        return self.head.next == self.tail
+
+class LFUCache:
+
+    def __init__(self, capacity: int):
+        self.key_to_node = {}
+        self.count_to_list = defaultdict(LinkedList)
+        self.low = 0
+        self.cap = capacity
+        self.size = 0
+
+    def use(self, node) -> None:
+        self.count_to_list[node.count].remove(node)
+        node.count += 1
+        self.count_to_list[node.count].append(node)
+        if self.count_to_list[self.low].empty():
+            self.low = node.count
 
     def get(self, key: int) -> int:
-        if key not in self.cache: 
+        if key not in self.key_to_node:
             return -1
-        self.remove(self.cache[key])
-        self.insert(self.cache[key])
-        return self.cache[key].val
+        node = self.key_to_node[key]
+        self.use(node)
+        return node.val
 
     def put(self, key: int, value: int) -> None:
-        if key in self.cache:
-            n = self.cache[key]
-            n.val = value
-            self.remove(n)
-            self.insert(n)
+        if key in self.key_to_node:
+            node = self.key_to_node[key]
+            node.val = value
+            self.use(node)
         else:
-            n = Node(key, value)
-            self.cache[key] = n
-            self.insert(n)
-        if len(self.cache) > self.capacity:
-            n = self.head.next
-            self.remove(n)
-            del self.cache[n.key]
+            if self.size == self.cap:
+                node = self.count_to_list[self.low].popleft()
+                del self.key_to_node[node.key]
+                self.size -= 1
+            node = Node(key, value)
+            self.key_to_node[key] = node
+            self.count_to_list[1].append(node)
+            self.size += 1
+            self.low = 1
 
-            
+
+# Your LFUCache object will be instantiated and called as such:
+# obj = LFUCache(capacity)
+# param_1 = obj.get(key)
+# obj.put(key,value)
