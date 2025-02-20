@@ -10,31 +10,27 @@ class Solution:
         sideLength = sumLength // 4
         if max(matchsticks) > sideLength:
             return False
-        count = defaultdict(int)
-        for match in matchsticks:
-            count[match] += 1
-        def formSqaure(currLength, sidesFormed):
-            if sidesFormed == 4:
+        sides = [0] * 4
+        matchsticks.sort(reverse=True)
+        def formSquare(i):
+            if i == len(matchsticks):
                 return True
-            if currLength == sideLength:
-                return formSqaure(0, sidesFormed + 1)
-            if currLength > sideLength:
-                return False
-            for match in count:
-                if count[match] > 0:
-                    count[match] -= 1
-                    if formSqaure(currLength + match, sidesFormed):
+            for j, side in enumerate(sides):
+                if side + matchsticks[i] <= sideLength:
+                    sides[j] += matchsticks[i]
+                    if formSquare(i + 1):
                         return True
-                    count[match] += 1
+                    sides[j] = side
             return False
-        return formSqaure(0, 0)
+        return formSquare(0)
   
 solution = Solution()
 tests = [
   ([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15], True),
   ([13,11,1,8,6,7,8,8,6,7,8,9,8], True),
   ([1,1,2,2,2], True),
-  ([3,3,3,3,4], False)
+  ([3,3,3,3,4], False),
+  ([4,13,1,1,14,15,1,3,13,1,3,5,2,8,12], True)
 ]
 for test, expected in tests:
     assert(solution.makesquare(test) == expected)
