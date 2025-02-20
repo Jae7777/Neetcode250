@@ -11,7 +11,7 @@ class Solution:
         if max(matchsticks) > sideLength:
             return False
         count = defaultdict(int)
-        for match in sorted(matchsticks)[::-1]:
+        for match in matchsticks:
             count[match] += 1
         def formSqaure(currLength, sidesFormed):
             if sidesFormed == 4:
