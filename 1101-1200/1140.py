@@ -1,4 +1,8 @@
 # https://leetcode.com/problems/stone-game-ii/
+# 2-D DP
+# Time: O(N^2)
+# Space: O(N^2)
+from typing import List
 class Solution:
     def stoneGameII(self, piles: List[int]) -> int:
         n = len(piles)

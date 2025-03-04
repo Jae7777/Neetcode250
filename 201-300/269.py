@@ -1,4 +1,8 @@
 # https://neetcode.io/problems/foreign-dictionary
+# graph
+# TIME: O(n * m), n = len(words), m = max(len(word))
+# SPACE: O(n * m)
+from typing import List
 class Solution:
     def foreignDictionary(self, words: List[str]) -> str:
         graph = {c: set() for w in words for c in w}

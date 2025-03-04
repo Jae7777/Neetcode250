@@ -1,4 +1,8 @@
 # https://leetcode.com/problems/last-stone-weight-ii/
+# 2-D DP
+# Time: O(N^2)
+# Space: O(N^2)
+from typing import List
 class Solution:
     def lastStoneWeightII(self, stones: List[int]) -> int:
         dp = {}

@@ -1,4 +1,11 @@
 # https://neetcode.io/problems/swim-in-rising-water
+# https://leetcode.com/problems/swim-in-rising-water/description/
+# graph
+# Dijkstra's algorithm
+# TIME: O(N * log(N))
+# SPACE: O(N)
+from typing import List
+import heapq
 class Solution:
     def swimInWater(self, grid: List[List[int]]) -> int:
         ROW, COL = len(grid), len(grid[0])
@@ -21,4 +28,3 @@ class Solution:
                 heapq.heappush(pq, (grid[r][c + 1], r, c + 1))
             
         return minElevation
-

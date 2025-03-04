@@ -1,4 +1,8 @@
-# https://neetcode.io/problems/min-cost-to-connect-points
+# https://leetcode.com/problems/min-cost-to-connect-all-points/description/
+# Kruskal MST
+# TIME: O(N^2 * log(N^2)), N = len(points)
+# SPACE: O(N^2)
+from typing import List
 class Solution:
     def minCostConnectPoints(self, points: List[List[int]]) -> int:
         edges = []

@@ -1,4 +1,8 @@
+# https://leetcode.com/problems/reconstruct-itinerary/description/
 # https://neetcode.io/problems/reconstruct-flight-path
+# TIME: O(N * log(N)), N = len(tickets) * max(len(tickets[i]))
+# SPACE: O(N)
+from typing import List
 class Solution:
     def findItinerary(self, tickets: List[List[str]]) -> List[str]:
         graph = defaultdict(list)

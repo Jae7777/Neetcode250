@@ -1,4 +1,8 @@
-# https://neetcode.io/problems/target-sum
+# https://leetcode.com/problems/target-sum/description/
+# 2-D DP
+# Time: O(N * target)
+# Space: O(N * target)
+from typing import List
 class Solution:
     def findTargetSumWays(self, nums: List[int], target: int) -> int:
         memo = {}

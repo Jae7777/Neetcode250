@@ -1,4 +1,12 @@
 # https://neetcode.io/problems/network-delay-time
+# https://leetcode.com/problems/network-delay-time/description/
+# graph
+# Dijkstra's algorithm
+# Time: O(N * log(N))
+# Space: O(N)
+from typing import List
+from collections import defaultdict
+import heapq
 class Solution:
     def networkDelayTime(self, times: List[List[int]], n: int, k: int) -> int:
         graph = defaultdict(set)

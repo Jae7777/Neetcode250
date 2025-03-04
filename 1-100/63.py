@@ -1,4 +1,8 @@
 # https://leetcode.com/problems/unique-paths-ii/
+# 2-D DP Bottom up
+# Time: O(M * N)
+# Space: O(1)
+from typing import List
 class Solution:
     def uniquePathsWithObstacles(self, grid: List[List[int]]) -> int:
         ROW, COL = len(grid), len(grid[0])
