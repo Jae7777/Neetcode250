@@ -1,5 +1,24 @@
 # https://leetcode.com/problems/longest-turbulent-subarray/
-
+# Runtime: beats 27.54%
+# Memory: beats 30.11%
+class Solution:
+    def maxTurbulenceSize(self, arr: List[int]) -> int:
+        inc, dec = 1, 1
+        res = 1
+        for i in range(1, len(arr)):
+            if arr[i - 1] == arr[i]:
+                inc, dec = 1, 1
+            elif arr[i - 1] < arr[i]:
+                inc = dec + 1
+                dec = 1
+            else:
+                dec = inc + 1
+                inc = 1
+            res = max(res, max(inc, dec))
+        return res
+    
+# Runtime: beats 95.55%
+# Memory: beats 48.96%
 class Solution:
     def maxTurbulenceSize(self, arr: List[int]) -> int:
         sign = 0
