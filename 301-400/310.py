@@ -18,7 +18,6 @@ class Solution:
             if len(graph[u]) == 1:
                 q.append(u)
             edgCount[u] = len(graph[u])
-        visited = set(q)
         while q:
             if n <= 2:
                 break
