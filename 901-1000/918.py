@@ -1,4 +1,5 @@
 # https://leetcode.com/problems/maximum-sum-circular-subarray/
+from typing import List
 class Solution:
     def maxSubarraySumCircular(self, nums: List[int]) -> int:
         globMax, currMax = float('-inf'), 0

@@ -1,4 +1,5 @@
 # https://leetcode.com/problems/longest-happy-string/
+import heapq
 class Solution:
     def longestDiverseString(self, a: int, b: int, c: int) -> str:
         pq = [(-a, 'a'), (-b, 'b'), (-c, 'c')]

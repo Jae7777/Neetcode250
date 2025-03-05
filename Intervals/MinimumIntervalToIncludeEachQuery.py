@@ -1,4 +1,7 @@
 # https://neetcode.io/problems/minimum-interval-including-query
+# https://leetcode.com/problems/minimum-interval-to-include-each-query/
+
+from typing import List
 # O(n * m + k) time, O(n) space
 # where n is the difference of the max interval end and min interval start,
 # m is the number of intervals,

@@ -1,4 +1,7 @@
 # https://leetcode.com/problems/reorganize-string/
+import heapq
+from collections import defaultdict
+
 class Solution:
     def reorganizeString(self, s: str) -> str:
         count = defaultdict(int)

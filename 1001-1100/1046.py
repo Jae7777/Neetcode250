@@ -1,4 +1,8 @@
 # https://neetcode.io/problems/last-stone-weight
+# https://leetcode.com/problems/last-stone-weight/description/
+from typing import List
+import heapq
+
 class Solution:
     def lastStoneWeight(self, stones: List[int]) -> int:
         pq = []

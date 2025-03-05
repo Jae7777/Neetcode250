@@ -1,4 +1,6 @@
 # https://neetcode.io/problems/merge-triplets-to-form-target
+# https://leetcode.com/problems/merge-triplets-to-form-target-triplet/description/
+from typing import List
 class Solution:
     def mergeTriplets(self, triplets: List[List[int]], target: List[int]) -> bool:
         curr = [float('-inf')] * 3

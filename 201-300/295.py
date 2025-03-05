@@ -1,4 +1,6 @@
 # https://neetcode.io/problems/find-median-in-a-data-stream
+# https://leetcode.com/problems/find-median-from-data-stream/description/
+import heapq
 class MedianFinder:
 
     def __init__(self):

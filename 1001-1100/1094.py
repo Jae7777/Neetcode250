@@ -1,4 +1,6 @@
 # https://leetcode.com/problems/car-pooling/
+from typing import List
+import heapq
 class Solution:
     def carPooling(self, trips: List[List[int]], capacity: int) -> bool:
         startOrder = []

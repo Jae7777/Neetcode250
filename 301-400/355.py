@@ -1,4 +1,9 @@
 # https://neetcode.io/problems/design-twitter-feed
+# https://leetcode.com/problems/design-twitter/description/
+from collections import defaultdict
+from typing import List
+import heapq
+
 class Twitter:
 
     def __init__(self):

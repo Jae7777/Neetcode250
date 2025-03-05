@@ -1,4 +1,6 @@
 # https://leetcode.com/problems/single-threaded-cpu/
+from typing import List
+import heapq
 class Solution:
     def getOrder(self, tasks: List[List[int]]) -> List[int]:
         enqueue = []

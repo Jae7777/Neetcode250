@@ -1,4 +1,5 @@
 # https://neetcode.io/problems/valid-parenthesis-string
+# https://leetcode.com/problems/valid-parenthesis-string/description/
 class Solution:
     def checkValidString(self, s: str) -> bool:
         openMin, openMax = 0, 0

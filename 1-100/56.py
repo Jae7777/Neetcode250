@@ -1,4 +1,7 @@
 # https://neetcode.io/problems/merge-intervals
+# https://leetcode.com/problems/merge-intervals/description/
+from typing import List
+
 class Solution: # O(nlogn) time, O(n) space
     def merge(self, intervals: List[List[int]]) -> List[List[int]]:
         res = []

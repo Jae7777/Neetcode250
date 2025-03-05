@@ -1,4 +1,7 @@
 # https://neetcode.io/problems/partition-labels
+# https://leetcode.com/problems/partition-labels/
+from typing import List
+from collections import defaultdict
 class Solution:
     def partitionLabels(self, s: str) -> List[int]:
         count = defaultdict(int)

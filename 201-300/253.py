@@ -1,11 +1,14 @@
 # https://neetcode.io/problems/meeting-schedule-ii
 """
 Definition of Interval:
+"""
 class Interval(object):
     def __init__(self, start, end):
         self.start = start
         self.end = end
-"""
+
+from typing import List
+import heapq
 
 class Solution: # O(n^2) time, O(n) space
     def minMeetingRooms(self, intervals: List[Interval]) -> int:
