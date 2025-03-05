@@ -1,6 +1,7 @@
 # https://leetcode.com/problems/find-critical-and-pseudo-critical-edges-in-minimum-spanning-tree/description/
 # TIME: O(E^2)
 # SPACE: O(E)
+from typing import List
 class DSU:
     def __init__(self, n):
         self.par = [i for i in range(n)]
