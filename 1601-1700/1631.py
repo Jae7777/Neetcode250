@@ -2,6 +2,7 @@
 # TIME: O(n * log(n)), n is the number of cells in heights
 # SPACE: O(n)
 from typing import List
+import heapq
 class Solution:
     def minimumEffortPath(self, heights: List[List[int]]) -> int:
         ROW, COL = len(heights), len(heights[0])
