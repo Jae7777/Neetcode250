@@ -3,6 +3,7 @@
 # TIME: O(N * log(N)), N = len(tickets) * max(len(tickets[i]))
 # SPACE: O(N)
 from typing import List
+from collections import defaultdict
 class Solution:
     def findItinerary(self, tickets: List[List[str]]) -> List[str]:
         graph = defaultdict(list)
