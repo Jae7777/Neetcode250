@@ -1,8 +1,14 @@
-# https://neetcode.io/problems/duplicate-integer
+# https://neetcode.io/problems/find-duplicate-integer
 # https://leetcode.com/problems/find-the-duplicate-number/description/
-# TIME: O(N)
-# SPACE: O(1)
 from typing import List
 class Solution:
-    def hasDuplicate(self, nums: List[int]) -> bool:
-        return len(set(nums)) < len(nums)
+    def findDuplicate(self, nums: List[int]) -> int:
+        t, h = nums[0], nums[nums[0]]
+        while t != h:
+            t = nums[t]
+            h = nums[nums[h]]
+        t = 0
+        while t != h:
+            t = nums[t]
+            h = nums[h]
+        return t
