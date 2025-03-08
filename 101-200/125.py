@@ -1,4 +1,8 @@
 # https://neetcode.io/problems/is-palindrome
+# https://leetcode.com/problems/valid-palindrome/description/
+
+import re
+
 class Solution:
     def isPalindrome(self, s: str) -> bool:
         s = re.compile('[\W_]+').sub('', s).lower()

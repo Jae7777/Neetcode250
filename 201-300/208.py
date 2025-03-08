@@ -1,4 +1,6 @@
 # https://neetcode.io/problems/implement-prefix-tree
+# https://leetcode.com/problems/implement-trie-prefix-tree/description/
+
 class Node:
     def __init__(self):
         self.next = {}

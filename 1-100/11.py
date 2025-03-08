@@ -1,4 +1,8 @@
 # https://neetcode.io/problems/max-water-container
+# https://leetcode.com/problems/container-with-most-water/description/
+
+from typing import List
+
 class Solution:
     def maxArea(self, heights: List[int]) -> int:
         res = 0

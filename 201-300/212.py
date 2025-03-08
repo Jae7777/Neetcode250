@@ -1,4 +1,8 @@
 # https://neetcode.io/problems/search-for-word-ii
+# https://leetcode.com/problems/word-search-ii/description/
+
+from typing import List
+
 class TrieNode:
     def __init__(self):
         self.next = {}
@@ -26,7 +30,6 @@ class Solution:
         searched = set()
         ROW, COL = len(board), len(board[0])
         def search(d: TrieNode, r: int, c: int) -> None:
-            
             if r < 0 or c < 0 or r >= ROW or c >= COL or (r, c) in currPath:
                 return
             letter = board[r][c]
@@ -41,19 +44,17 @@ class Solution:
                     word.append(board[path[0]][path[1]])
                 res.append("".join(word))
                 d.isWord = False
-            up = search(d, r - 1, c)
-            down = search(d, r + 1, c)
-            left = search(d, r, c - 1)
-            right = search(d, r, c + 1)
+            search(d, r - 1, c)
+            search(d, r + 1, c)
+            search(d, r, c - 1)
+            search(d, r, c + 1)
             del currPath[(r, c)]
-
 
         root = trie.root
         for r in range(ROW):
             for c in range(COL):
                 if board[r][c] in root.next:
                     search(root, r, c)
-        
         return res
 
         

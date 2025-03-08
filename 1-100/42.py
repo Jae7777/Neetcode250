@@ -1,4 +1,8 @@
 # https://neetcode.io/problems/trapping-rain-water
+# https://leetcode.com/problems/trapping-rain-water/description/
+
+from typing import List
+
 class Solution:
     def trap(self, height: List[int]) -> int:
         res = 0

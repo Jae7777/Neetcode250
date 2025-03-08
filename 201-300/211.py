@@ -1,4 +1,6 @@
 # https://neetcode.io/problems/design-word-search-data-structure
+# https://leetcode.com/problems/design-add-and-search-words-data-structure/description/
+
 class Node:
     def __init__(self):
         self.next = {}

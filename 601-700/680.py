@@ -1,7 +1,7 @@
-# https://leetcode.com/problems/reverse-string/submissions/1511994700/
+# https://leetcode.com/problems/valid-palindrome-ii/description/
+
 class Solution:
     def validPalindrome(self, s: str) -> bool:
-        count = 0
         def isPalindrome(l, r):
             while l < r:
                 if s[l] != s[r]:

@@ -1,4 +1,7 @@
-# https://leetcode.com/problems/reverse-string/submissions/1511994700/
+# https://leetcode.com/problems/reverse-string/description/
+
+from typing import List
+
 class Solution:
     def reverseString(self, s: List[str]) -> None:
         """

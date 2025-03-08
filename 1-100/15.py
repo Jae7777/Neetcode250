@@ -1,4 +1,7 @@
 # https://neetcode.io/problems/three-integer-sum
+# https://leetcode.com/problems/3sum/description/
+from typing import List
+
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
         nums.sort()

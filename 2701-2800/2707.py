@@ -1,4 +1,7 @@
 # https://leetcode.com/problems/extra-characters-in-a-string/
+
+from typing import List
+
 class TrieNode:
     def __init__(self):
         self.isWord = False
