@@ -3,9 +3,9 @@ Welcome to my repository of solutions for NeetCode problems! 🚀 This repositor
 All solutions are written in Python. This repo currently contains solutions to:
 - 🧠 Neetcode Blind 75
 - 🚀 Neetcode 150
+- 🦄 Neetcode 250
 
 I am currently working through:
-- 🦄 Neetcode 250
 - 🌍 Neetcode All
 
 📝 Contributions
